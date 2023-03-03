@@ -1,0 +1,256 @@
+1 concurrent user doing 100 page hits
+This shows you how well the web-server will handle a simple load of 1 user doing a number of page loads.
+
+This is ApacheBench, Version 2.3 <$Revision: 1843412 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 192.168.0.110 (be patient).....done
+
+
+Server Software:        
+Server Hostname:        192.168.0.110
+Server Port:            8443
+SSL/TLS Protocol:       TLSv1.2,ECDHE-RSA-AES128-GCM-SHA256,2048,128
+Server Temp Key:        X25519 253 bits
+
+Document Path:          /api/customer/123
+Document Length:        Variable
+
+Concurrency Level:      1
+Time taken for tests:   0.020 seconds
+Complete requests:      100
+Failed requests:        0
+Keep-Alive requests:    100
+Total transferred:      17800 bytes
+HTML transferred:       3100 bytes
+Requests per second:    5042.10 [#/sec] (mean)
+Time per request:       0.198 [ms] (mean)
+Time per request:       0.198 [ms] (mean, across all concurrent requests)
+Transfer rate:          876.46 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.7      0       7
+Processing:     0    0   0.0      0       0
+Waiting:        0    0   0.0      0       0
+Total:          0    0   0.7      0       7
+
+Percentage of the requests served within a certain time (ms)
+  50%      0
+  66%      0
+  75%      0
+  80%      0
+  90%      0
+  95%      0
+  98%      0
+  99%      7
+ 100%      7 (longest request)
+
+====================================================================
+
+5 concurrent users each doing 10 page hits
+This is 100 page loads by 5 different concurrent users, each user is doing 10 sequential pages loads.
+This represents a peak load of a website that gets about 50,000+ hits a month. Congratulations, your website / business / idea has made it (and no doubt is on its way up).
+
+This is ApacheBench, Version 2.3 <$Revision: 1843412 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 192.168.0.110 (be patient).....done
+
+
+Server Software:        
+Server Hostname:        192.168.0.110
+Server Port:            8443
+SSL/TLS Protocol:       TLSv1.2,ECDHE-RSA-AES128-GCM-SHA256,2048,128
+Server Temp Key:        X25519 253 bits
+
+Document Path:          /api/customer/123
+Document Length:        Variable
+
+Concurrency Level:      10
+Time taken for tests:   0.022 seconds
+Complete requests:      50
+Failed requests:        0
+Keep-Alive requests:    50
+Total transferred:      8900 bytes
+HTML transferred:       1550 bytes
+Requests per second:    2246.79 [#/sec] (mean)
+Time per request:       4.451 [ms] (mean)
+Time per request:       0.445 [ms] (mean, across all concurrent requests)
+Transfer rate:          390.55 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    2   4.5      0      12
+Processing:     0    1   1.4      0      10
+Waiting:        0    1   1.4      0      10
+Total:          0    3   4.7      0      13
+
+Percentage of the requests served within a certain time (ms)
+  50%      0
+  66%      1
+  75%      1
+  80%      8
+  90%     12
+  95%     13
+  98%     13
+  99%     13
+ 100%     13 (longest request)
+
+====================================================================
+
+10 concurrent users each doing 10 page hits
+This is 100 page loads by 10 different concurrent users, each user is doing 10 sequential pages loads.
+This is where the load starts to really stress test the web-server, as 10 concurrent (simultaneous) users is a lot of traffic. Most websites will be lucky to see 1 or 2 users (visitors) a minute… So let me say it again, 10 users per second is a lot of traffic!
+
+This is ApacheBench, Version 2.3 <$Revision: 1843412 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 192.168.0.110 (be patient).....done
+
+
+Server Software:        
+Server Hostname:        192.168.0.110
+Server Port:            8443
+SSL/TLS Protocol:       TLSv1.2,ECDHE-RSA-AES128-GCM-SHA256,2048,128
+Server Temp Key:        X25519 253 bits
+
+Document Path:          /api/customer/123
+Document Length:        Variable
+
+Concurrency Level:      10
+Time taken for tests:   0.038 seconds
+Complete requests:      100
+Failed requests:        0
+Keep-Alive requests:    100
+Total transferred:      17800 bytes
+HTML transferred:       3100 bytes
+Requests per second:    2600.64 [#/sec] (mean)
+Time per request:       3.845 [ms] (mean)
+Time per request:       0.385 [ms] (mean, across all concurrent requests)
+Transfer rate:          452.07 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    2   5.6      0      21
+Processing:     0    1   1.2      0      12
+Waiting:        0    0   1.2      0      11
+Total:          0    2   6.0      0      22
+
+Percentage of the requests served within a certain time (ms)
+  50%      0
+  66%      0
+  75%      0
+  80%      1
+  90%     17
+  95%     20
+  98%     21
+  99%     22
+ 100%     22 (longest request)
+
+====================================================================
+
+30 concurrent users each doing 20 page hits
+This is 600 page loads by 30 different concurrent users, each user is doing 20 sequential pages loads.
+This is the edge of what a non-cached WordPress setup will be able to handle without crashing or timing-out the web-server (and/or ab itself). This type of load represents an extremely active website or forum, the top 1%.
+
+This is ApacheBench, Version 2.3 <$Revision: 1843412 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 192.168.0.110 (be patient)
+
+
+Server Software:        
+Server Hostname:        192.168.0.110
+Server Port:            8443
+SSL/TLS Protocol:       TLSv1.2,ECDHE-RSA-AES128-GCM-SHA256,2048,128
+Server Temp Key:        X25519 253 bits
+
+Document Path:          /api/customer/123
+Document Length:        Variable
+
+Concurrency Level:      30
+Time taken for tests:   0.062 seconds
+Complete requests:      600
+Failed requests:        0
+Keep-Alive requests:    600
+Total transferred:      106800 bytes
+HTML transferred:       18600 bytes
+Requests per second:    9749.12 [#/sec] (mean)
+Time per request:       3.077 [ms] (mean)
+Time per request:       0.103 [ms] (mean, across all concurrent requests)
+Transfer rate:          1694.67 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1   5.6      0      32
+Processing:     0    1   2.2      1      11
+Waiting:        0    1   2.2      1      11
+Total:          0    3   6.2      1      40
+
+Percentage of the requests served within a certain time (ms)
+  50%      1
+  66%      1
+  75%      1
+  80%      2
+  90%      5
+  95%     11
+  98%     29
+  99%     30
+ 100%     40 (longest request)
+
+====================================================================
+
+90 concurrent users each doing 30 page hits
+This is 2700 page loads by 90 different concurrent users, each user is doing 30 sequential pages loads.
+Only a fully cached (using mod_cache) Apache setup will be able to handle this type of a load. This represents some of the busiest sites on the net, and there is no hope of this not maxing out and crashing (if your settings are not just right) the web-server with a non-cached WordPress setup.
+
+This is ApacheBench, Version 2.3 <$Revision: 1843412 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 192.168.0.110 (be patient)
+
+
+Server Software:        
+Server Hostname:        192.168.0.110
+Server Port:            8443
+SSL/TLS Protocol:       TLSv1.2,ECDHE-RSA-AES128-GCM-SHA256,2048,128
+Server Temp Key:        X25519 253 bits
+
+Document Path:          /api/customer/123
+Document Length:        Variable
+
+Concurrency Level:      90
+Time taken for tests:   0.160 seconds
+Complete requests:      2700
+Failed requests:        0
+Keep-Alive requests:    2700
+Total transferred:      480600 bytes
+HTML transferred:       83700 bytes
+Requests per second:    16890.41 [#/sec] (mean)
+Time per request:       5.328 [ms] (mean)
+Time per request:       0.059 [ms] (mean, across all concurrent requests)
+Transfer rate:          2936.03 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    2   9.3      0      79
+Processing:     0    3   3.8      2      34
+Waiting:        0    3   3.8      2      34
+Total:          0    5  10.3      2      82
+
+Percentage of the requests served within a certain time (ms)
+  50%      2
+  66%      4
+  75%      4
+  80%      5
+  90%      7
+  95%     14
+  98%     55
+  99%     67
+ 100%     82 (longest request)
